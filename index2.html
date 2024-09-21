@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup-Registration | FundGaze</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Register yourself to raise funds</h1>
+    <div id="multi-step-form-container">
+        <!-- Form Steps / Progress Bar -->
+<div class="form-stepper-container">
+    <ul class="form-stepper form-stepper-horizontal mx-auto pl-0">
+        <li class="form-stepper-active text-center form-stepper-list" step="1">
+            <a class="mx-2">
+                <span class="form-stepper-circle"><span>1</span></span>
+            </a>
+            <div class="stepper-label">Founder Details</div>
+        </li>
+        <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+            <a class="mx-2">
+                <span class="form-stepper-circle text-muted"><span>2</span></span>
+            </a>
+            <div class="stepper-label text-muted">Company Details</div>
+        </li>
+        <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+            <a class="mx-2">
+                <span class="form-stepper-circle text-muted"><span>3</span></span>
+            </a>
+            <div class="stepper-label text-muted">Funding Details</div>
+        </li>
+        <li class="form-stepper-unfinished text-center form-stepper-list" step="4">
+            <a class="mx-2">
+                <span class="form-stepper-circle text-muted"><span>4</span></span>
+            </a>
+            <div class="stepper-label text-muted">Product Details</div>
+        </li>
+    </ul>
+</div>
+
+
+        <!-- Step Wise Form Content -->
+        <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST">
+            <!-- Step 1: Founder Details -->
+            <section id="step-1" class="form-step" required>
+                <h2 class="font-normal">Founder Details</h2>
+                <div class="mt-3">
+                    <label for="founder-name">Name:</label>
+                    <input type="text" id="founder-name" name="founder-name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" required>
+
+                    <label for="job-status" style="width: 98%;">Founder Currently in Job?</label>
+                    <select id="job-status" name="job-status" required >
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+
+                    <label for="founder-stake">Percentage of Stake in Company:</label>
+                    <input type="number" id="founder-stake" name="founder-stake" required>
+                </div>
+                <div class="mt-3">
+                    <button class="button btn-navigate-form-step" type="button" step_number="2">Next</button>
+                </div>
+            </section>
+
+            <!-- Step 2: Company Details -->
+            <section id="step-2" class="form-step d-none">
+                <h2 class="font-normal">Company Details</h2>
+                <div class="mt-3">
+                    <label for="company-name">Company Name:</label>
+                    <input type="text" id="company-name" name="company-name" required>
+
+                    <label for="sector">Sector:</label>
+                    <input type="text" id="sector" name="sector" required>
+
+                    <label for="company-website">Company Website:</label>
+                    <input type="url" id="company-website" name="company-website">
+
+                    <label for="registration-number">Registration Number:</label>
+                    <input type="text" id="registration-number" name="registration-number" required>
+
+                    <label for="patent-completed">Patent Completed?</label>
+                    <select id="patent-completed" name="patent-completed" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="mt-3">
+                    <button class="button btn-navigate-form-step" type="button" step_number="1">Previous</button>
+                    <button class="button btn-navigate-form-step" type="button" step_number="3">Next</button>
+                </div>
+            </section>
+
+            <!-- Step 3: Funding Details -->
+            <section id="step-3" class="form-step d-none">
+                <h2 class="font-normal">Funding Details</h2>
+                <div class="mt-3">
+                    <label for="valuation">Company Valuation:</label>
+                    <input type="number" id="valuation" name="valuation" required>
+
+                    <label for="funds-needed">Funds Needed:</label>
+                    <input type="number" id="funds-needed" name="funds-needed" required>
+
+                    <label for="equity-sharing">Equity Sharing (%):</label>
+                    <input type="number" id="equity-sharing" name="equity-sharing" required>
+
+                    <label for="investor">Preferred Investor:</label>
+                    <input type="text" id="investor" name="investor" required>
+
+                    <label for="funding-round">Funding Round:</label>
+                    <select id="funding-round" name="funding-round" required>
+                        <option value="seed">Seed</option>
+                        <option value="series-a">Series A</option>
+                        <option value="series-b">Series B</option>
+                        <option value="series-c">Series C</option>
+                    </select>
+                </div>
+                <div class="mt-3">
+                    <button class="button btn-navigate-form-step" type="button" step_number="2">Previous</button>
+                    <button class="button btn-navigate-form-step" type="button" step_number="4">Next</button>
+                </div>
+            </section>
+
+            <!-- Step 4: Product Details -->
+            <section id="step-4" class="form-step d-none">
+                <h2 class="font-normal">Product Details</h2>
+                <div class="mt-3">
+                    <label for="product-name">Product Name:</label>
+                    <input type="text" id="product-name" name="product-name" required>
+
+                    <label for="total-sales">Total Sales (This Financial Year):</label>
+                    <input type="number" id="total-sales" name="total-sales" required>
+
+                    <label for="product-description">Product Description:</label>
+                    <textarea id="product-description" name="product-description" required></textarea>
+
+                    <label for="product-maturity">Product Maturity:</label>
+                    <select id="product-maturity" name="product-maturity" required>
+                        <option value="prototype">Prototype</option>
+                        <option value="beta">Beta</option>
+                        <option value="production">Production</option>
+                    </select>
+
+                    <label for="users-count">Number of Active Users:</label>
+                    <input type="number" id="users-count" name="users-count" required>
+                </div>
+                <div class="mt-3">
+                    <button class="button btn-navigate-form-step" type="button" step_number="3">Previous</button>
+                    <button class="button submit-btn" type="submit">Submit</button>
+                </div>
+            </section>
+        </form>
+    </div>
+
+    <!-- JavaScript for multi-step form -->
+    <script src="script.js"></script>
+</body>
+</html>
